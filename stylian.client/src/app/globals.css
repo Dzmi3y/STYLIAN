@@ -1,6 +1,17 @@
+@import-normalize;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: DMSansBold;
+  src: url(./fonts/DMSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: DMSansRegular;
+  src: url(./fonts/DMSans-Regular.ttf);
+}
 
 :root {
   --background: #ffffff;
