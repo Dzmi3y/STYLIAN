@@ -5,28 +5,36 @@
 
 @font-face {
   font-family: DMSansBold;
-  src: url(./fonts/DMSans-Bold.ttf);
+  src: url(../fonts/DMSans-Bold.ttf);
 }
 
 @font-face {
   font-family: DMSansRegular;
-  src: url(./fonts/DMSans-Regular.ttf);
+  src: url(../fonts/DMSans-Regular.ttf);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color: #ffffff;
+  --secondary-color: #c3c4c5;
+  --nonactive-tab-color: #7c7c80;
+  --bg-dark-color: #14161c;
+  --bg-gray-color: #24262e;
+  --button-bg-color: #0e0e11;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--secondary-color);
+  background: radial-gradient(
+    circle farthest-side at right bottom,
+    var(--bg-gray-color),
+    var(--bg-dark-color)
+  );
+  font-family: DMSansRegular;
+}
+
+h1,
+h2 {
+  color: var(--primary-color);
+  background: var(--bg-dark-color);
+  font-family: DMSansBold;
 }
