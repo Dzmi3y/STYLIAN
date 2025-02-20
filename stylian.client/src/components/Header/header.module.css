@@ -1,8 +1,14 @@
+@import "../../app/media-queries.css";
+
 .container {
   margin: 1rem 8rem 1rem 8rem;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+
+  @media (--small-viewport) {
+    display: none;
+  }
 }
 
 .nav {
