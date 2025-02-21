@@ -10,6 +10,7 @@ const SearchButton = () => {
   return (
     <BaseButton onClick={clickHandler}>
       <Image
+        draggable="false"
         src="/images/icons/search_icon.png"
         alt="search"
         width={25}

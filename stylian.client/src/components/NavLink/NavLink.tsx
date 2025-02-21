@@ -10,7 +10,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ children, url }) => {
   return (
-    <Link className={styles.link} href={url}>
+    <Link draggable="false" className={styles.link} href={url}>
       {children}
     </Link>
   );

@@ -1,20 +1,26 @@
 @import "../../app/media-queries.css";
 
 .container {
-  margin: 1rem 8rem 1rem 8rem;
+  margin: 1rem var(--sides-margin);
+
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-
-  @media (--small-viewport) {
-    display: none;
-  }
 }
-
-.nav {
+.centerContainer {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.nav {
+  align-items: center;
+  gap: 1rem;
+
+  display: none;
+  @media (--lg) {
+    display: flex;
+  }
 }
 
 .buttonsContainer {
@@ -26,13 +32,17 @@
 .logo {
   color: var(--primary-color);
   font-family: DMSansBold;
-  margin-right: 2rem;
   font-size: 1.5rem;
   font-weight: 800;
   transition: transform 0.1s ease-in-out;
   cursor: pointer;
-  &:hover {
-    transform: rotate(2deg) scale(1.1);
+  user-select: none;
+  margin-right: 0rem;
+  @media (--lg) {
+    margin-right: 2rem;
+    &:hover {
+      transform: rotate(2deg) scale(1.1);
+    }
   }
   &:active {
     transform: rotate(-4deg) scale(0.5);

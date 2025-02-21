@@ -10,6 +10,7 @@ const CartButton = () => {
   return (
     <BaseButton onClick={clickHandler}>
       <Image
+        draggable="false"
         src="/images/icons/cart_icon.png"
         alt="cart"
         width={25}

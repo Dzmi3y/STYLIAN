@@ -10,6 +10,7 @@ const AccountButton = () => {
   return (
     <BaseButton onClick={clickHandler}>
       <Image
+        draggable="false"
         src="/images/icons/user_icon.png"
         alt="account"
         width={25}

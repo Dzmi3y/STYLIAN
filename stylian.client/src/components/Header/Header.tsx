@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import MenuButton from "../Buttons/MenuButton/MenuButton";
 import NavLink from "../NavLink/NavLink";
 import CartButton from "../Buttons/CartButton/CartButton";
@@ -10,13 +10,15 @@ import { ROUTES } from "@/data/const/routes";
 const Header = () => {
   return (
     <div className={styles.container}>
-      <nav className={styles.nav}>
-        <MenuButton />
+      <MenuButton />
+      <div className={styles.centerContainer}>
         <span className={styles.logo}>STYLIAN</span>
-        <NavLink url={ROUTES.HOME}>Home</NavLink>
-        <NavLink url={ROUTES.CATALOG}>Catalog</NavLink>
-        <NavLink url={ROUTES.CONTACTS}>Contacts</NavLink>
-      </nav>
+        <nav className={styles.nav}>
+          <NavLink url={ROUTES.HOME}>Home</NavLink>
+          <NavLink url={ROUTES.CATALOG}>Catalog</NavLink>
+          <NavLink url={ROUTES.CONTACTS}>Contacts</NavLink>
+        </nav>
+      </div>
       <div className={styles.buttonsContainer}>
         <SearchButton />
         <AccountButton />

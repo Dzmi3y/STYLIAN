@@ -1,0 +1,8 @@
+@import "../../../app/media-queries.css";
+
+.container {
+  display: block;
+  @media (--lg) {
+    display: none;
+  }
+}
