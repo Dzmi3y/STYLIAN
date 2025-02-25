@@ -1,8 +1,46 @@
 @import "../../../app/media-queries.css";
 
 .container {
+  position: relative;
   display: block;
   @media (--lg) {
     display: none;
   }
+}
+
+.popup {
+  background: var(--bg-dark-color);
+  position: absolute;
+  z-index: 0;
+  height: 200px;
+  width: 120px;
+  transition: height 0.1s ease-in-out, width 0.1s ease-in-out;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hidePopup {
+  height: 0px;
+  width: 0px;
+}
+.showPopup {
+  height: 120px;
+  width: 100px;
+}
+
+.hideImage {
+  display: none;
+}
+
+.showImage {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2px;
+  margin: 10px 5px;
 }
