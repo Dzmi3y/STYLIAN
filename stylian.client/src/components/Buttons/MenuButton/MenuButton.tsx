@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import BaseButton from "../BaseButton/BaseButton";
 import Image from "next/image";
 import styles from "./MenuButton.module.css";
@@ -8,15 +8,32 @@ import NavLink from "@/components/NavLink/NavLink";
 
 const MenuButton = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
+  const containerRef = useRef<HTMLDivElement>(null);
   const menuClickHandler = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      containerRef.current &&
+      !containerRef.current.contains(event.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <BaseButton onClick={menuClickHandler}>
         <Image
-          className={isMenuOpen ? styles.showImage : styles.hideImage}
+          className={!isMenuOpen ? styles.showImage : styles.hideImage}
           src="/images/icons/menu_icon.png"
           alt="menu button"
           width={30}
@@ -24,7 +41,7 @@ const MenuButton = () => {
           priority
         />
         <Image
-          className={!isMenuOpen ? styles.showImage : styles.hideImage}
+          className={isMenuOpen ? styles.showImage : styles.hideImage}
           src="/images/icons/close_icon.png"
           alt="menu button"
           width={30}
@@ -34,7 +51,7 @@ const MenuButton = () => {
       </BaseButton>
       <div
         className={`${styles.popup} ${
-          !isMenuOpen ? styles.showPopup : styles.hidePopup
+          isMenuOpen ? styles.showPopup : styles.hidePopup
         }`}
       >
         <nav className={styles.nav}>
