@@ -21,23 +21,24 @@
   --bg-gray-color: #24262e;
   --button-bg-color: #0e0e11;
   --sides-margin: clamp(1rem, 5vw + 1rem, 8rem);
-}
-
-body {
-  min-width: 376px;
-  overflow-x: auto;
-  color: var(--secondary-color);
   background: radial-gradient(
     circle farthest-side at right bottom,
     var(--bg-gray-color),
     var(--bg-dark-color)
   );
+  background-repeat: no-repeat;
+}
+
+body {
+  min-width: 376px;
+  min-height: 100dvh;
+  overflow-x: auto;
+  color: var(--secondary-color);
   font-family: DMSansRegular;
 }
 
 h1,
 h2 {
   color: var(--primary-color);
-  background: var(--bg-dark-color);
-  font-family: DMSansBold;
+  font-family: DMSansRegular;
 }
