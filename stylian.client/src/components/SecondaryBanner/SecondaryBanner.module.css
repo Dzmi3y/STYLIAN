@@ -1,8 +1,7 @@
 .imageContainer {
   position: relative;
-  width: 96rem;
+  width: 85rem;
 }
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -11,8 +10,8 @@
 
 .centerArea {
   position: absolute;
-  top: 25%;
-  left: 29%;
+  top: 10%;
+  right: 0;
 }
 
 .title {
@@ -26,24 +25,4 @@
   font-size: 1rem;
   letter-spacing: 0.3rem;
   margin-bottom: 1.5rem;
-}
-
-.verticalText {
-  color: var(--primary-color);
-  transform: rotate(-90deg);
-  position: absolute;
-  bottom: 10%;
-  left: 36%;
-}
-
-.linkBar {
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.whiteText {
-  color: var(--primary-color);
 }
