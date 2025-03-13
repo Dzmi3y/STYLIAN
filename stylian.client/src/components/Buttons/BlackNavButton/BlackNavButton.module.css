@@ -3,10 +3,11 @@
 .button {
   border: none;
   height: 60px;
-  width: 140px;
+  min-width: 140px;
   font-size: 1.3rem;
   background-color: var(--button-bg-color);
   transition: transform 0.1s ease-in-out, color 0.5s ease-in-out;
+  padding: 0px 20px;
   @media (--lg) {
     &:hover {
       color: var(--primary-color);
